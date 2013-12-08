@@ -1,0 +1,12 @@
+*.mobileprovision
+.repl_history
+build
+tags
+.DS_Store
+#*#
+*~
+*.gem
+.idea
+
+/manifest.json
+.env

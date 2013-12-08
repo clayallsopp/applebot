@@ -1,0 +1,318 @@
+{
+    "create_app.js": {
+        "namespace": "app",
+        "action": "create",
+        "description": "Create App",
+        "options": {
+            "required": [
+                {
+                    "key":"title",
+                    "description": "App's title"
+                }, {
+                    "key": "sku",
+                    "description": "App's SKU"
+                }, {
+                    "key": "id",
+                    "description": "App's bundle identifier"
+                }, {
+                    "key": "app_version",
+                    "description": "App version number"
+                }, {
+                    "key": "copyright",
+                    "description": "App copyright info"
+                }, {
+                    "key": "first_name",
+                    "description": "Contact Info first name"
+                }, {
+                    "key": "last_name",
+                    "description": "Contact Info last name"
+                }, {
+                    "key": "email",
+                    "description": "Contact Info email"
+                }, {
+                    "key": "phone",
+                    "description": "Contact Info phone number"
+                }, {
+                    "key": "primary_category",
+                    "description": "Primary Category of your app",
+                    "values": ["book", "business", "catalogs",
+                        "education", "entertainment", "finance",
+                        "food_and_drink", "games", "health_and_fitness",
+                        "lifestyle", "medical", "music", "navigation",
+                        "news", "photo_and_video", "productivity",
+                        "reference", "social_networking", "sports",
+                        "travel", "utilities", "weather"]
+                }, {
+                    "key": "secondary_category",
+                    "description": "Secondary Category of your app",
+                    "values": ["book", "business", "catalogs",
+                        "education", "entertainment", "finance",
+                        "food_and_drink", "games", "health_and_fitness",
+                        "lifestyle", "medical", "music", "navigation",
+                        "news", "photo_and_video", "productivity",
+                        "reference", "social_networking", "sports",
+                        "travel", "utilities", "weather"]
+                }, {
+                    "key": "description",
+                    "description": "App description"
+                }, {
+                    "key": "keywords",
+                    "description": "App keywords"
+                }, {
+                    "key": "support_url",
+                    "description": "App support URL"
+                }, {
+                    "key": "large_icon",
+                    "description": "File path for iTunes app icon (1024x1024x)"
+                }, {
+                    "key": "screenshots_35",
+                    "description": "JSON array of paths for screenshots of app on 3.5\" devices"
+                }, {
+                    "key": "screenshots_4",
+                    "description": "JSON array of paths for screenshots of app on 4\" devices"
+                }
+            ],
+            "optional": [
+                {
+                    "key": "availability_date",
+                    "description": "Date to make the app available (MM/DD/YYYY)",
+                    "default": "as soon as approved"
+                }, {
+                    "key": "price_tier",
+                    "description": "App's price tier - either 'free' or a number",
+                    "default": "'free'"
+                }, {
+                    "key": "marketing_url",
+                    "description": "App marketing URL"
+                }, {
+                    "batch": true,
+                    "keys": [
+                        "alcohol_tobacco_or_drug_use_or_references", "cartoon_or_fantasy_violence",
+                        "graphic_sexual_content_and_nudity", "horror_fear_themes",
+                        "medical_treatment_information",
+                        "mature_suggestive_themes", "profanity_or_crude_humor",
+                        "prolonged_graphic_or_sadistic_realistic_violence", "realistic_violence",
+                        "sexual_content_or_nudity", "simulated_gambling"
+                    ],
+                    "description": "Content frequency for app",
+                    "values": ["none", "infrequent", "frequent"],
+                    "default": "'none'"
+                }, {
+                    "batch": true,
+                    "keys": ["unrestricted_web_access", "gambling_and_contests"],
+                    "description": "Content occurance for app",
+                    "values": ["no", "yes"],
+                    "default": "'no'"
+                }
+            ]
+        }
+    },
+
+    "update_app.js": {
+        "namespace": "app",
+        "action": "update",
+        "description": "Update App",
+        "options": {
+            "required": [
+                {
+                    "key":"title",
+                    "description": "App's existing title"
+                }, {
+                    "key": "app_version",
+                    "description": "Update version number"
+                }, {
+                    "key": "update_description",
+                    "description": "Update release notes"
+                }
+            ],
+            "optional": [
+                {
+                    "key":"new_title",
+                    "description": "App's new title"
+                }, {
+                    "key": "large_icon",
+                    "description": "File path for new iTunes app icon (1024x1024x)"
+                }, {
+                    "key": "screenshots_35",
+                    "description": "JSON array of paths for new screenshots of app on 3.5\" devices"
+                }, {
+                    "key": "screenshots_4",
+                    "description": "JSON array of paths for new screenshots of app on 4\" devices"
+                }
+            ]
+        }
+    },
+    "remove_from_sale_app.js": {
+        "namespace": "app",
+        "action": "remove_from_sale",
+        "description": "Remove app from sale",
+        "options": {
+            "required": [
+                {
+                    "key":"title",
+                    "description": "App's existing title"
+                }
+            ]
+        }
+    },
+    "reject_binary_app.js": {
+        "namespace": "app",
+        "action": "reject_binary",
+        "description": "Reject the binary of an pending release",
+        "options": {
+            "required": [
+                {
+                    "key": "title",
+                    "description": "App title"
+                }
+            ],
+            "optional": [
+                {
+                    "key": "app_version",
+                    "description": "App version"
+                }
+            ]
+        }
+    },
+
+    "create_app_id.js": {
+        "namespace": "app_id",
+        "action": "create",
+        "description": "Create App ID",
+        "options": {
+            "required": [
+                {
+                    "key": "name",
+                    "description": "App ID description"
+                }, {
+                    "key":"app_id",
+                    "description": "App bundle identifier"
+                }
+            ],
+            "optional": [
+                {
+                    "key": "data_protection",
+                    "description": "Use Data Protection service for app ID",
+                    "values": ["complete", "unless_open", "until_first_auth"]
+                }, {
+                    "key": "icloud",
+                    "description": "Use iCloud with app ID",
+                    "values": ["true", "false"],
+                    "default": "'false'"
+                }, {
+                    "key": "inter_app_audio",
+                    "description": "Use Inter-App Audio with app id",
+                    "values": ["true", "false"],
+                    "default": "'false'"
+                }, {
+                    "key": "passbook",
+                    "description": "Use Passbook with app id",
+                    "values": ["true", "false"],
+                    "default": "'false'"
+                }, {
+                    "key": "push",
+                    "description": "Use Push Notifications/APNS with app id",
+                    "values": ["true", "false"],
+                    "default": "'false'"
+                }
+            ]
+        }
+    },
+    "delete_app_id.js": {
+        "namespace": "app_id",
+        "action": "delete",
+        "description": "Delete App ID",
+        "options": {
+            "required": [
+                {
+                    "key": "name",
+                    "description": "App ID description"
+                }
+            ]
+        }
+    },
+    "list_app_id.js": {
+        "namespace": "app_id",
+        "action": "list",
+        "description": "List App IDs",
+        "options": {
+            "optional": [
+                {
+                    "key": "source",
+                    "description": "The source to list bundle IDs from (iTunes Connect or Apple Developer Connection)",
+                    "values": ["itc", "adc"],
+                    "default": "'adc'"
+                }
+            ]
+        }
+    },
+
+    "create_profile.js": {
+        "namespace": "profile",
+        "action": "create",
+        "description": "Create Provisioning Profile",
+        "options": {
+            "required": [
+                {
+                    "key": "environment",
+                    "description": "The type of profile to create",
+                    "values": ["development", "store", "adhoc", "inhouse"]
+                }, {
+                    "key": "name",
+                    "description": "Profile name"
+                }, {
+                    "key":"app_id",
+                    "description": "App bundle identifier"
+                }],
+            "optional": [{
+                    "key": "certificate",
+                    "description": "Certificate name to create the profile with",
+                    "default": "The first certificate listed"
+                },
+                {
+                    "key":"download_to",
+                    "description": "File path to download the profile to"
+                }
+            ]
+        }
+    },
+    "download_profile.js": {
+        "namespace": "profile",
+        "action": "download",
+        "description": "Download a Provisioning Profile",
+        "options": {
+            "required": [
+                {
+                    "key":"app_id",
+                    "description": "App bundle identifier"
+                }, {
+                    "key":"download_to",
+                    "description": "File path to download the profile to"
+                }
+            ],
+            "optional": [
+                {
+                    "key": "profile_type",
+                    "description": "The type of profile to use",
+                    "values": ["development", "distribution"],
+                    "default": "'development'"
+                }
+            ]
+        }
+    },
+    "list_profile.js": {
+        "namespace": "profile",
+        "action": "list",
+        "description": "List Provisioning Profiles",
+        "options": {
+            "optional": [
+                {
+                    "key": "profile_type",
+                    "description": "The type of profile to use",
+                    "values": ["development", "distribution"],
+                    "default": "'development'"
+                }
+            ]
+        }
+    }
+}
