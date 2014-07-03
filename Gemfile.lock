@@ -2,11 +2,6 @@ PATH
   remote: .
   specs:
     applebot (0.1.0)
-
-PATH
-  remote: ../botlib
-  specs:
-    botlib (0.0.1)
       activesupport (>= 3.2)
       commander (~> 4.2.0)
       terminal-table (>= 1.4.0)
@@ -38,6 +33,5 @@ PLATFORMS
 
 DEPENDENCIES
   applebot!
-  botlib!
   dotenv
   rake

@@ -11,3 +11,7 @@ task :console do
   ARGV.clear
   IRB.start
 end
+
+task :update_botlib do
+  `git subtree pull --prefix vendor/botlib https://github.com/usepropeller/botlib.git master --squash`
+end

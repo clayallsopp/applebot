@@ -1,3 +1,6 @@
+proj_root = File.expand_path(File.join(File.dirname(__FILE__), '..'))
+$:.unshift(File.join(proj_root, 'vendor', 'botlib', 'lib'))
+
 require 'botlib'
 
 require_relative 'applebot/error'
