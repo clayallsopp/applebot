@@ -13,10 +13,6 @@ Gem::Specification.new do |s|
   s.summary     = "AppleBot"
   s.description = AppleBot::DESCRIPTION
 
-  s.add_dependency "commander", "~> 4.1.2"
-  s.add_dependency "activesupport", ">= 3.2"
-  s.add_dependency "terminal-table", ">= 1.4.0"
-
   s.add_development_dependency "rake"
   s.add_development_dependency "dotenv"
 

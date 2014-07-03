@@ -1,4 +1,4 @@
-module AppleBot
+class AppleBot
   class AppleBotError < StandardError
     class_attribute :message
     self.message = "Unspecified AppleBot error occured"
