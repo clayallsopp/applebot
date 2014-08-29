@@ -225,8 +225,8 @@
         "options": {
             "required": [
                 {
-                    "key": "name",
-                    "description": "App ID description"
+                    "key":"app_id",
+                    "description": "App bundle identifier"
                 }
             ]
         }
